@@ -1,3 +1,6 @@
+# This is a template of a simple template of a fcitx module with name "example"
+# Please remember to replace all "[Ee]xample"'s in the files and file names
+# to your addon's real name.
 cmake_minimum_required(VERSION 2.6)
 
 # The Project Name
@@ -6,7 +9,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 find_package(Fcitx 4.2.7 REQUIRED)
 
 # This will add a uninstall target. Comment out this line if other cmake packages
-# you are using already provide such target (e.g. KDE).
+# you are using already provides such target (e.g. KDE).
 _fcitx_add_uninstall_target()
 include_directories(${FCITX4_FCITX_INCLUDE_DIRS})
 include_directories(${FCITX4_FCITX_CONFIG_INCLUDE_DIRS})

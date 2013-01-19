@@ -10,5 +10,9 @@ endforeach()
 # This will register a pot target to update your po and pot files according to
 # your source files, targets to compile and install po files into mo
 # files as well as merging necessary translation into certain files.
+# You can use `make pot` to extract strings to be translated from your source
+# files.
 fcitx_translate_set_pot_target(pot fcitx-example fcitx-example.pot
-  BUGADDR your-email@address.com)
+  # uncomment the following line and set to your email address.
+  # BUGADDR your-email@address.com
+  )
