@@ -1,0 +1,10 @@
+[Addon]
+Name=fcitx-example
+_GeneralName=Example Addon of Fcitx
+_Comment=This is a template of a simple Fcitx Module
+Category=Module
+Enabled=True
+Library=fcitx-example.so
+Type=SharedLibrary
+Dependency=
+Priority=80

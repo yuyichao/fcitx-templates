@@ -1,0 +1,8 @@
+[FcitxAddon]
+Name=fcitx-example
+Prefix=Example
+Include0="example.h"
+Function0=
+Function1=
+Function2=
+Self.Type=FcitxExample*
