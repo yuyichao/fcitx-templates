@@ -1,0 +1,9 @@
+# KDE Config File
+[General]
+Name=Fcitx Module
+Name[zh_CN]=Fcitx 模块
+Comment=Fcitx Module
+Comment[zh_TW]=Fcitx 模块
+Category=Fcitx/Module
+Icon=fcitx
+ShowFilesAfterGeneration=%{PROJECTDIR}/src/%{APPNAMELC}.c
