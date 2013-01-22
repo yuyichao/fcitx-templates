@@ -1,0 +1,8 @@
+[FcitxAddon]
+Name=fcitx-%{APPNAMELC}
+Prefix=%{APPNAME}
+Include0="%{APPNAMELC}.h"
+Function0=
+Function1=
+Function2=
+Self.Type=Fcitx%{APPNAME}*

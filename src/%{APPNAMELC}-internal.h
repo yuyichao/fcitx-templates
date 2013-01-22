@@ -18,7 +18,23 @@
  *   51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.              *
  ***************************************************************************/
 
-#include "example-internal.h"
+#ifndef _FCITX_%{APPNAMEUC}_INTERNAL_H_
+#define _FCITX_%{APPNAMEUC}_INTERNAL_H_
 
-CONFIG_BINDING_BEGIN(FcitxExampleConfig)
-CONFIG_BINDING_END()
+#include "%{APPNAMELC}.h"
+#include <fcitx/instance.h>
+
+#define _(x) dgettext("fcitx-%{APPNAMELC}", x)
+
+typedef struct {
+    FcitxGenericConfig gconfig;
+} Fcitx%{APPNAME}Config;
+
+typedef struct {
+    Fcitx%{APPNAME}Config config;
+    FcitxInstance *owner;
+} Fcitx%{APPNAME};
+
+CONFIG_BINDING_DECLARE(Fcitx%{APPNAME}Config);
+
+#endif

@@ -3,8 +3,7 @@
 # to your addon's real name.
 cmake_minimum_required(VERSION 2.6)
 
-# The Project Name
-project(fcitx-example)
+project(fcitx-%{APPNAMELC})
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 find_package(Fcitx 4.2.7 REQUIRED)
 

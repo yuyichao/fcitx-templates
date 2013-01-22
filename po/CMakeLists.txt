@@ -12,7 +12,7 @@ endforeach()
 # files as well as merging necessary translation into certain files.
 # You can use `make pot` to extract strings to be translated from your source
 # files.
-fcitx_translate_set_pot_target(pot fcitx-example fcitx-example.pot
+fcitx_translate_set_pot_target(pot fcitx-%{APPNAMELC} fcitx-%{APPNAMELC}.pot
   # uncomment the following line and set to your email address.
   # BUGADDR your-email@address.com
   )

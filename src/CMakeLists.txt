@@ -1,12 +1,12 @@
 # Source files
-set(fcitx_example_sources
-  example-config.c
-  example.c
+set(fcitx_%{APPNAMELC}_sources
+  %{APPNAMELC}-config.c
+  %{APPNAMELC}.c
   )
 
 # See document in FcitxMacro.cmake and the example .fxaddon file
 # doc/fcitx-example.fxaddon in the fcitx repo for more information.
-fcitx_add_addon_full(example
+fcitx_add_addon_full(%{APPNAMELC}
   DESC # Use configdesc file
   SCAN # Generate api header
   SCAN_PRIV # Generate addfunction header
@@ -15,4 +15,4 @@ fcitx_add_addon_full(example
   # HEADERS headers.h # extra public headers to install
   # EXTRA_PO extra_files # extra files to translate
   # LINK_LIBS other-lib # external libraies to link
-  SOURCES ${fcitx_example_sources})
+  SOURCES ${fcitx_%{APPNAMELC}_sources})

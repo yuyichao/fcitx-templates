@@ -35,50 +35,50 @@
 #include <libintl.h>
 
 #include "config.h"
-#include "example-internal.h"
+#include "%{APPNAMELC}-internal.h"
 
-static void *FcitxExampleCreate(FcitxInstance *instance);
-static void FcitxExampleDestroy(void *arg);
-static void FcitxExampleReloadConfig(void *arg);
-CONFIG_DEFINE_LOAD_AND_SAVE(Example, FcitxExampleConfig, "fcitx-example")
-DECLARE_ADDFUNCTIONS(Example)
+static void *Fcitx%{APPNAME}Create(FcitxInstance *instance);
+static void Fcitx%{APPNAME}Destroy(void *arg);
+static void Fcitx%{APPNAME}ReloadConfig(void *arg);
+CONFIG_DEFINE_LOAD_AND_SAVE(%{APPNAME}, Fcitx%{APPNAME}Config, "fcitx-%{APPNAMELC}")
+DECLARE_ADDFUNCTIONS(%{APPNAME})
 
 FCITX_DEFINE_PLUGIN(fcitx_spell, module, FcitxModule) = {
-    .Create = FcitxExampleCreate,
-    .Destroy = FcitxExampleDestroy,
+    .Create = Fcitx%{APPNAME}Create,
+    .Destroy = Fcitx%{APPNAME}Destroy,
     .SetFD = NULL,
     .ProcessEvent = NULL,
-    .ReloadConfig = FcitxExampleReloadConfig
+    .ReloadConfig = Fcitx%{APPNAME}ReloadConfig
 };
 
 static void*
-FcitxExampleCreate(FcitxInstance *instance)
+Fcitx%{APPNAME}Create(FcitxInstance *instance)
 {
-    FcitxExample *example = fcitx_utils_new(FcitxExample);
-    bindtextdomain("fcitx-example", LOCALEDIR);
-    example->owner = instance;
+    Fcitx%{APPNAME} *%{APPNAMELC} = fcitx_utils_new(Fcitx%{APPNAME});
+    bindtextdomain("fcitx-%{APPNAMELC}", LOCALEDIR);
+    %{APPNAMELC}->owner = instance;
 
-    if (!ExampleLoadConfig(&example->config)) {
-        free(example);
+    if (!%{APPNAME}LoadConfig(&%{APPNAMELC}->config)) {
+        free(%{APPNAMELC});
         return NULL;
     }
 
-    FcitxExampleAddFunctions(instance);
-    return example;
+    Fcitx%{APPNAME}AddFunctions(instance);
+    return %{APPNAMELC};
 }
 
 static void
-FcitxExampleDestroy(void *arg)
+Fcitx%{APPNAME}Destroy(void *arg)
 {
-    FcitxExample *example = (FcitxExample*)arg;
-    free(example);
+    Fcitx%{APPNAME} *%{APPNAMELC} = (Fcitx%{APPNAME}*)arg;
+    free(%{APPNAMELC});
 }
 
 static void
-FcitxExampleReloadConfig(void *arg)
+Fcitx%{APPNAME}ReloadConfig(void *arg)
 {
-    FcitxExample *example = (FcitxExample*)arg;
-    ExampleLoadConfig(&example->config);
+    Fcitx%{APPNAME} *%{APPNAMELC} = (Fcitx%{APPNAME}*)arg;
+    %{APPNAME}LoadConfig(&%{APPNAMELC}->config);
 }
 
-#include "fcitx-example-addfunctions.h"
+#include "fcitx-%{APPNAMELC}-addfunctions.h"

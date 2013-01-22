@@ -1,0 +1,10 @@
+[Addon]
+Name=fcitx-%{APPNAMELC}
+_GeneralName=%{APPNAME} Addon of Fcitx
+_Comment=
+Category=Module
+Enabled=True
+Library=fcitx-%{APPNAMELC}.so
+Type=SharedLibrary
+Dependency=
+Priority=80

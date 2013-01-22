@@ -17,10 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/fcitx-example.conf.in:3
-msgid "Example Addon of Fcitx"
-msgstr ""
-
-#: src/fcitx-example.conf.in:4
-msgid "This is a template of a simple Fcitx Module"
+#: src/fcitx-%{APPNAMELC}.conf.in:3
+msgid "%{APPNAME} Addon of Fcitx"
 msgstr ""
