@@ -5,6 +5,7 @@ build*/
 .git/
 *.tar.*
 *.kdev4
+!/%{*}.kdev4
 *.kate-swp
 *.orig
 tags
